@@ -24,5 +24,6 @@ async function add(user) {
 function findById(id) {
   return db("users")
     .where({ id })
+    .select('id', 'username', 'password') // just away to see it & test. You don't want to return the user password
     .first();
 }
